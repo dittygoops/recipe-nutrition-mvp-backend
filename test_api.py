@@ -17,8 +17,8 @@ def test_calculate_macros():
         "servings": 2
     }
     
-    # API endpoint URL
-    url = "http://localhost:5000/calculate_macros"
+    # API endpoint URL - replace with your Railway URL
+    url = "https://recipe-nutrition-mvp-backend-production.up.railway.app/calculate_macros"  # Replace with your actual Railway URL
     
     try:
         # Send POST request
