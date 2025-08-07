@@ -10,7 +10,7 @@ load_dotenv()
 app = Flask(__name__)
 
 # Get API key from environment variable
-SPOONACULAR_API_KEY = os.getenv('SPOONACULAR_API_KEY') 
+SPOONACULAR_API_KEY = os.getenv('SPOONACULAR_API_KEY')
 
 @app.route('/calculate_macros', methods=['POST'])
 def calculate_macros():
@@ -75,4 +75,5 @@ def health_check():
 if __name__ == '__main__':
     # Get port from environment variable (for Railway) or default to 5000
     port = int(os.getenv('PORT', 5000))
+    # Only use Flask's development server for local development
     app.run(debug=False, host='0.0.0.0', port=port)
