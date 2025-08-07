@@ -79,9 +79,20 @@ curl -X POST http://localhost:5000/calculate_macros \
   }'
 ```
 
+## Railway Deployment
+
+To deploy on Railway:
+
+1. Connect your GitHub repository to Railway
+2. Railway will automatically detect the Python app and use the `Procfile`
+3. Add your environment variables in Railway dashboard:
+   - `SPOONACULAR_API_KEY`: Your Spoonacular API key
+4. Deploy!
+
 ## Notes
 
 - The application sends a POST request to Spoonacular's `/recipes/analyze` endpoint
 - Ingredients should be formatted as strings with amounts and units (e.g., "1 cup flour")
 - The API key is included as a query parameter in the Spoonacular API request
-- Error handling is included for network issues and API errors 
+- Error handling is included for network issues and API errors
+- The app automatically uses the `PORT` environment variable provided by Railway 
