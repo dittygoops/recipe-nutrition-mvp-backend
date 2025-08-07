@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import requests
 import json
 import os
@@ -8,6 +9,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 app = Flask(__name__)
+
+# Enable CORS for all routes
+CORS(app, origins="*")
 
 # Get API key from environment variable
 SPOONACULAR_API_KEY = os.getenv('SPOONACULAR_API_KEY')
